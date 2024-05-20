@@ -1,0 +1,48 @@
+Stanisgee Project Set Up and Data Acquisition Procedure for Canned NDWI
+Johnny Wilkens
+
+Notes:
+Code is enclosed in ` ` marks. Ex: `example code` 
+These instructions were written for a windows machine, if using a mac or other operating system some editing may be necessary.
+This method of data gathering has been superceded. Project files used in this procedure can be found under the "old" folder in the code and data directories.
+
+1: Anaconda Navigator
+Download and install Anaconda Navigator from https://anaconda.org/anaconda/anaconda-navigator
+
+
+2: Google Earth Engine and geetools install
+Open Anaconda Navigator and launch the CMD.exe Prompt
+Run `conda install -c conda-forge earthengine-api` Select yes to any prompts that may appear
+Run `pip install geetools`
+*These two functions essentially do the same thing which is install a package from the internet. Conda is usually used but geetools is not in the conda library so pip is used.
+Help references:
+https://github.com/gee-community/gee_tools
+https://developers.google.com/earth-engine/guides/python_install-conda#install_api (Ignore the steps about setting up an environment, I believe anaconda does that for you)
+
+
+3: 00environmentSetUp
+Close the CMD.exe Prompt and open jupyter notebooks. Navigate to the code/cannedndwi folder of the stanisgee project folder and open 00environmentSetUp.ipynb.
+Run the first cell and complete call necessary steps to get the verification code(use email associated with your google cloud project)
+Run the second cell to test if the api is working correctly. It should return the metadata of an image.
+Help references:
+https://developers.google.com/earth-engine/guides/python_install-conda#install_api
+
+
+4: 01dataCollection
+Open 01dataCollection. This script selects and filters imagery(or an image collection in google earth engine terms) and exports it to a specific google drive folder. It is designed to be run multiple times for each year desired.
+Create a folder in your google drive to store the image files you will collect.
+Edit the Collection Parameters cell so that startDate and endDate define the correct year desired and folderName defines the name of the folder you created to store the image files.
+Help references:
+https://github.com/gee-community/gee_tools
+https://developers.google.com/earth-engine/apidocs
+https://developers.google.com/earth-engine/tutorials/community/intro-to-python-api
+
+
+X: Google Colab
+If you are having trouble with any installation problems you can also just run these notebooks in google colab. Just open the files in google drive and a colab notebook should open with it. Colab already has the earthengine api installed so it should work seamlessly.
+
+
+
+
+
+
